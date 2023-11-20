@@ -4,11 +4,11 @@ import { COLORS, MIXINS, SPACING, TYPOGRAPHY } from "@styles";
 export const styles = StyleSheet.create({
 	wrapper: {
 		borderWidth: 1,
-		borderRadius: MIXINS.scaleSize(4),
 		alignItems: "center",
 		flexDirection: "row",
 		justifyContent: "center",
 		columnGap: SPACING.SCALE_12,
+		borderRadius: SPACING.BORDER_RADIUS,
 	},
 	primaryWrapper: {
 		borderColor: COLORS.PRIMARY,

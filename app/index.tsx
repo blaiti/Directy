@@ -1,25 +1,34 @@
 import React from "react";
 import { StyleSheet, ImageBackground, View, Text } from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { LinearGradient } from 'expo-linear-gradient';
 
-import { Button } from "src/components/Button";
+import { Button } from "@components";
 import { COLORS, SPACING, TYPOGRAPHY } from "@styles";
+import { router } from "expo-router";
+import { AppLinkUtils } from "@utils";
 
-const Home = () => {
+const Initial = () => {
+    const insets = useSafeAreaInsets();
+    
 	return (
         <ImageBackground
             style={styles.container}
             resizeMode="cover"
             source={require("@images/initial.jpg")}
         >
-            <View style={styles.bodyContainer}>
+            <View 
+                style={{
+                    ...styles.bodyContainer, 
+                    marginBottom: insets.bottom ? insets.bottom : 0
+                }}
+            >
                 <Text style={styles.title}>Find Your Favourite Nearby Activity</Text>
                 <Button
                     title="Let's Go"
                     type="secondary"
                     size="large"
-                    onPress={() => {}}
-                    customStyles={{ marginBottom: SPACING.SCALE_12 }}
+                    onPress={() => router.push(AppLinkUtils.getTabsPath())}
                 />
             </View>
             <LinearGradient
@@ -39,7 +48,6 @@ const styles = StyleSheet.create({
     bodyContainer: {
         zIndex: 1,
         padding: SPACING.SCALE_18,
-        marginBottom: SPACING.SCALE_18
     },
     title: {
         color: COLORS.WHITE,
@@ -56,4 +64,4 @@ const styles = StyleSheet.create({
 	},
 });
 
-export default Home;
+export default Initial;
