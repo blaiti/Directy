@@ -1,0 +1,22 @@
+{
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "strict": true,
+    "baseUrl": ".",
+    "allowJs": true,
+		"checkJs": true,
+		"skipLibCheck": true,
+		"noImplicitAny": false,
+		"strictNullChecks": true,
+    "paths": {
+      "@fonts": ["./assets/fonts"],
+			"@images": ["./assets/images"],
+			"@utils": ["./src/utils/index.ts"],
+			"@hooks": ["./src/hooks/index.ts"],
+      "@store": ["./src/store/index.tsx"],
+      "@icons": ["src/assets/icons/index.ts"],
+      "@styles": ["src/assets/styles/index.ts"],
+			"@components": ["./src/components/index.ts"],
+    }
+  }
+}
