@@ -12,7 +12,7 @@ interface HorizontalItemProps {
   customStyles?: StyleProp<ViewStyle>;
 }
 
-const HorizontalItem = ({ business, customStyles }: HorizontalItemProps) => {
+const VerticalItem = ({ business, customStyles }: HorizontalItemProps) => {
   return (
     <View style={[styles.container, customStyles]}>
       <Image
@@ -49,4 +49,4 @@ const HorizontalItem = ({ business, customStyles }: HorizontalItemProps) => {
   );
 };
 
-export default HorizontalItem;
+export default VerticalItem;

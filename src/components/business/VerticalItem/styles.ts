@@ -3,28 +3,28 @@ import { COLORS, SPACING, TYPOGRAPHY } from "@styles";
 
 const styles = StyleSheet.create({
   container: {
-    width: 220,
+    gap: SPACING.SCALE_8,
+    marginHorizontal: SPACING.SCALE_18,
+    flexDirection: "row",
+    padding: SPACING.SCALE_8,
     shadowColor: COLORS.BLACK,
     shadowOffset: {
       width: 2,
       height: 2,
     },
     shadowOpacity: 0.2,
-    marginBottom: SPACING.SCALE_8,
-    marginLeft: SPACING.SCALE_12,
+    marginBottom: SPACING.SCALE_12,
     backgroundColor: COLORS.WHITE,
     borderRadius: SPACING.BORDER_RADIUS,
   },
   image: {
-    width: 220,
-    height: 120,
-    borderTopLeftRadius: SPACING.BORDER_RADIUS,
-    borderTopRightRadius: SPACING.BORDER_RADIUS,
+    width: 80,
+    height: 80,
+    borderRadius: SPACING.BORDER_RADIUS,
   },
   infoContainer: {
-    width: 220,
-    gap: SPACING.SCALE_4,
-    padding: SPACING.SCALE_8,
+    flex: 1,
+    justifyContent: "space-between",
     backgroundColor: COLORS.WHITE,
     borderRadius: SPACING.BORDER_RADIUS,
   },
