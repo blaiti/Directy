@@ -1,7 +1,8 @@
 # Directy
 Directy is a business finder app designed to help users easily locate a various businesses within a specific area.
 
-![Directy](https://github.com/blaiti/Directy/assets/32510139/0b97f6cf-c960-4557-bf2a-481da53cfeab)
+![Directy](https://github.com/blaiti/Directy/assets/32510139/cb70f566-be56-4375-9943-1a02549ce087)
+
 
 ## Table of Contents
 - [Tech Stack](#tech-stack)
@@ -21,7 +22,7 @@ Directy is a business finder app designed to help users easily locate a various 
 
 Clone the repo
 ```bash
-  git clone https://github.com/blaiti/React-Native-Animations
+  git clone https://github.com/blaiti/Directy
 ```
 
 Install Directy packages with npm
