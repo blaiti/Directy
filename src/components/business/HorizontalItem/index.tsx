@@ -5,7 +5,7 @@ import { SvgXml } from "react-native-svg";
 
 import styles from "./styles";
 import ICONS from "@icons";
-import { Business } from "src/models";
+import { Business } from "@models";
 
 interface HorizontalItemProps {
   business: Business;
@@ -38,7 +38,7 @@ const HorizontalItem = ({ business, customStyles }: HorizontalItemProps) => {
           <View style={{ ...styles.rowContainer, flex: 1 }}>
             <SvgXml width={15} height={15} xml={ICONS.location} />
             <Text numberOfLines={1} style={styles.subTitle}>
-              {business.address.city}, {business.address.state}
+              {business.address}
             </Text>
           </View>
 

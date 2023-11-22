@@ -1,19 +1,14 @@
 import React from "react";
 import { ScrollView, StyleSheet, View } from "react-native";
+import { observer } from "mobx-react";
 
-import { COLORS, SPACING } from "@styles";
-import {
-  BusinessComponents,
-  Button,
-  HeaderComponents,
-  Input,
-} from "@components";
-import { nearbyBusinesses } from "src/constants/nearby";
-import { recommendedBusinesses } from "src/constants/recommended";
-import { SvgXml } from "react-native-svg";
-import ICONS from "@icons";
+import { COLORS } from "@styles";
+import { useStore } from "@store";
+import { BusinessComponents, HeaderComponents } from "@components";
 
 const Home = () => {
+  const { appStore } = useStore();
+
   return (
     <View style={styles.container}>
       <HeaderComponents.HomeHeader />
@@ -22,23 +17,10 @@ const Home = () => {
         style={styles.bodyContainer}
         showsVerticalScrollIndicator={false}
       >
-        <View style={styles.searchContainer}>
-          <Button
-            title="Search..."
-            customStyles={{
-              flex: 1,
-              justifyContent: "flex-start",
-            }}
-            leftIcon={ICONS.search}
-            type={"secondary"}
-            size={"medium"}
-          />
-          <Button leftIcon={ICONS.filter} type={"primary"} size={"medium"} />
-        </View>
         <HeaderComponents.TitleHeader title="Nearby" />
-        <BusinessComponents.HorizontalList business={nearbyBusinesses} />
+        <BusinessComponents.HorizontalList business={appStore.nearby} />
         <HeaderComponents.TitleHeader title="Recommended" />
-        <BusinessComponents.VerticalList business={recommendedBusinesses} />
+        <BusinessComponents.VerticalList business={appStore.topRated} />
       </ScrollView>
     </View>
   );
@@ -53,13 +35,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: COLORS.WHITE,
   },
-  searchContainer: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: SPACING.SCALE_12,
-    marginTop: SPACING.SCALE_18,
-    marginHorizontal: SPACING.SCALE_18,
-  },
 });
 
-export default Home;
+export default observer(Home);

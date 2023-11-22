@@ -2,7 +2,7 @@ import React from "react";
 import { View, FlatList } from "react-native";
 
 import styles from "./styles";
-import { Business } from "src/models";
+import { Business } from "@models";
 import VerticalItem from "../VerticalItem";
 
 interface Props {
