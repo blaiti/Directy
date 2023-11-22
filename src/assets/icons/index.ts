@@ -1,15 +1,17 @@
 import BOTTOM_TABS from "./bottomTabs";
 import { chevronRight } from "./chevronRight";
+import { arrowLeft } from "./arrowLeft";
 import { location } from "./location";
-import { filter } from "./filter";
-import { search } from "./search";
+import { website } from "./website";
+import { phone } from "./phone";
 import { star } from "./star";
 
 const ICONS = {
   star,
-  filter,
-  search,
+  phone,
+  website,
   location,
+  arrowLeft,
   chevronRight,
   BOTTOM_TABS,
 };

@@ -1,18 +1,15 @@
-const reverseGeocode = async (coordinates: { lat: string, long: string}) => {
-    const address = await fetch(`https://geocode.maps.co/reverse?lat=${coordinates.lat}&${coordinates.long}`);
+import { LocationObject } from "expo-location";
 
-    return await address.json();
-};
+const reverseGeocode = async (location: LocationObject) => {
+  const address = await fetch(
+    `https://geocode.maps.co/reverse?lat=${location.coords.latitude}&lon=${location.coords.longitude}`
+  );
 
-const forwardGeocode = async (address: string) => {
-    const coordinates = await fetch(`https://geocode.maps.co/search?q==${address}`);
-
-    return await coordinates.json();
+  return await address.json();
 };
 
 const MapService = {
-	reverseGeocode,
-    forwardGeocode
+  reverseGeocode,
 };
 
 export default MapService;

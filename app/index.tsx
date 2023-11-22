@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { StyleSheet, ImageBackground, View, Text } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { LinearGradient } from "expo-linear-gradient";
+import { observer } from "mobx-react";
 import { router } from "expo-router";
 
 import { useStore } from "@store";
@@ -14,11 +15,14 @@ const Initial = () => {
   const { appStore } = useStore();
 
   useEffect(() => {
-    getNeabyPlaces();
+    appStore.getAddress();
+    getPlaces();
   }, []);
 
-  const getNeabyPlaces = async () => {
+  const getPlaces = async () => {
+    await appStore.getAddress();
     await appStore.getNeabyPlaces(true);
+    await appStore.getTopRatedPlaces(true);
   };
 
   return (
@@ -74,4 +78,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Initial;
+export default observer(Initial);

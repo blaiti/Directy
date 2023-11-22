@@ -17,9 +17,9 @@ const Home = () => {
         style={styles.bodyContainer}
         showsVerticalScrollIndicator={false}
       >
-        <HeaderComponents.TitleHeader title="Nearby" />
+        <HeaderComponents.TitleHeader title="Nearby" type="nearby" />
         <BusinessComponents.HorizontalList business={appStore.nearby} />
-        <HeaderComponents.TitleHeader title="Recommended" />
+        <HeaderComponents.TitleHeader title="Top Rated" type="topRated" />
         <BusinessComponents.VerticalList business={appStore.topRated} />
       </ScrollView>
     </View>

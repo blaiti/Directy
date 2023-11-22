@@ -1,11 +1,13 @@
 import React from "react";
 import type { StyleProp, ViewStyle } from "react-native";
-import { View, Image, Text } from "react-native";
+import { View, Image, Text, TouchableOpacity } from "react-native";
 import { SvgXml } from "react-native-svg";
 
 import styles from "./styles";
 import ICONS from "@icons";
 import { Business } from "@models";
+import { router } from "expo-router";
+import { AppLinkUtils } from "@utils";
 
 interface HorizontalItemProps {
   business: Business;
@@ -14,7 +16,11 @@ interface HorizontalItemProps {
 
 const HorizontalItem = ({ business, customStyles }: HorizontalItemProps) => {
   return (
-    <View style={[styles.container, customStyles]}>
+    <TouchableOpacity
+      activeOpacity={0.8}
+      onPress={() => router.push(AppLinkUtils.getBusinessPath(business))}
+      style={[styles.container, customStyles]}
+    >
       <Image
         resizeMode="cover"
         style={styles.image}
@@ -45,7 +51,7 @@ const HorizontalItem = ({ business, customStyles }: HorizontalItemProps) => {
           <Text style={styles.subTitle}>1.7 Km</Text>
         </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 

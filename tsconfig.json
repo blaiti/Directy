@@ -13,7 +13,6 @@
       "@images": ["./assets/images"],
       "@api": ["./src/api/index.ts"],
       "@utils": ["./src/utils/index.ts"],
-      "@hooks": ["./src/hooks/index.ts"],
       "@store": ["./src/store/index.tsx"],
       "@icons": ["src/assets/icons/index.ts"],
       "@styles": ["src/assets/styles/index.ts"],
